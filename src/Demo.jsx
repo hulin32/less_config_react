@@ -1,6 +1,37 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as actions from './fooAction';
 
-const Demo = () => <Link to="/">home</Link>;
+class Demo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.increFoo = this.increFoo.bind(this);
+  }
+  increFoo() {
+    const { fooActions } = this.props;
+    console.log('fooActions', fooActions);
+    fooActions.increFoo();
+  }
+  render() {
+    return (
+      <button onClick={() => this.increFoo()}>hello world {this.props.foo.count}</button>
+    );
+  }
+}
 
-export default Demo;
+const mapStateToProps = state => ({
+  foo: state.foo,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fooActions: bindActionCreators(actions, dispatch),
+});
+
+Demo.propTypes = {
+  fooActions: PropTypes.object,
+  foo: PropTypes.object,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Demo);
