@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 // import storage from 'redux-persist/lib/storage';
 import localForage from 'localforage';
-import foo from './foo';
+import fooDuck from 'ducks/foo';
 
 const persistConfig = {
   key: 'root',
@@ -10,10 +10,9 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-  foo,
+  foo: fooDuck.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
-
 
 export default persistedReducer;

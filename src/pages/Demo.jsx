@@ -2,7 +2,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from './fooAction';
+import fooDuck from 'ducks/foo';
 
 class Demo extends React.Component {
   constructor(props) {
@@ -16,7 +16,9 @@ class Demo extends React.Component {
   }
   render() {
     return (
-      <button onClick={() => this.increFoo()}>hello world {this.props.foo.count}</button>
+      <button onClick={() => this.increFoo()}>
+        hello world {this.props.foo.count}
+      </button>
     );
   }
 }
@@ -26,7 +28,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fooActions: bindActionCreators(actions, dispatch),
+  fooActions: bindActionCreators(fooDuck.creators, dispatch),
 });
 
 Demo.propTypes = {

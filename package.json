@@ -26,12 +26,15 @@
     "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
+    "extensible-duck": "^1.4.0",
+    "history": "^4.7.2",
     "localforage": "^1.5.7",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
     "redux": "^3.7.2",
     "redux-pack": "^0.1.5",
     "redux-persist": "^5.9.1",

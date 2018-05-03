@@ -12,7 +12,7 @@ module.exports = {
   watch: true,
   devServer: {
     historyApiFallback: true,
-    contentBase: './public'
+    contentBase: './public',
   },
   module: {
     rules: [
@@ -20,15 +20,19 @@ module.exports = {
         test: /js[x]?$/,
         exclude: /node_modules/,
         use: ['babel-loader', 'eslint-loader'],
-      }
-    ]
+      },
+    ],
   },
   resolve: {
-     extensions: [".js", ".json", ".jsx", ".css"],
+    extensions: ['.js', '.json', '.jsx', '.css'],
+    alias: {
+      ducks: path.resolve(__dirname, 'src/ducks'),
+      pages: path.resolve(__dirname, 'src/pages'),
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
-    })
-  ]
+    }),
+  ],
 };
