@@ -10,7 +10,7 @@ const route = () => (
   <ConnectedRouter history={history}>
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/demo" component={Demo} />
+        <Route exact path="/demo" component={Demo} />
     </Switch>
   </ConnectedRouter>
 );
