@@ -1,15 +1,19 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
+import { init } from '@rematch/core';
 import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
-import Route from './router';
-import { persistor, store } from './store';
+import Demo from 'pages/Demo';
+import * as models from './models';
 
-ReactDom.render(
+// generate Redux store
+const store = init({
+  models,
+});
+console.log('store', store);
+const Root = () => (
   <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      <Route />
-    </PersistGate>
-  </Provider>,
-  document.getElementById('app'),
+    <Demo />
+  </Provider>
 );
+
+ReactDOM.render(<Root />, document.getElementById('app'));
