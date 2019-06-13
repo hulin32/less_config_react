@@ -26,7 +26,6 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json', '.jsx', '.css'],
     alias: {
-      ducks: path.resolve(__dirname, 'src/ducks'),
       pages: path.resolve(__dirname, 'src/pages'),
     },
   },
