@@ -1,19 +1,19 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import { init } from '@rematch/core';
-import { Provider } from 'react-redux';
-import Demo from 'pages/Demo';
-import * as models from './models';
+import React from 'react';
+import './style.css';
+import Icon from './icon.png';
 
-// generate Redux store
-const store = init({
-  models,
-});
-console.log('store', store);
-const Root = () => (
-  <Provider store={store}>
-    <Demo />
-  </Provider>
+function component() {
+  return (
+    <div>
+      <img alt='icon' src={Icon} />
+      <div className='hello' />
+      hello world
+    </div>
+  );
+}
+
+ReactDOM.render(
+  component(),
+  document.getElementById('root')
 );
-
-ReactDOM.render(<Root />, document.getElementById('app'));
