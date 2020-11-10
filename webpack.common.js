@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
   entry: './src/index.jsx',
@@ -54,5 +55,8 @@ module.exports = {
       inject: 'body',
     }),
     new ESLintPlugin(),
+    new StylelintPlugin({
+      configFile: './.stylelintrc.json'
+    })
   ],
 };
