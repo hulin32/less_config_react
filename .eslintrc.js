@@ -1,4 +1,4 @@
-{
+module.exports = {
   "extends": ["airbnb", "prettier"],
   "env": {
     "es6": true,
@@ -14,14 +14,6 @@
         "aspects": ["noHref", "invalidHref", "preferButton"]
       }
     ],
-    "react/forbid-prop-types": "off",
-    "react/require-default-props": "off",
-    "max-len": "off",
-    "import/prefer-default-export": "off",
-    "import/no-extraneous-dependencies": "off",
-    "import/no-unresolved": "off",
-    "import/extensions": "off",
-    "no-multiple-empty-lines": "off"
   },
   "plugins": ["jsx-a11y"]
 }

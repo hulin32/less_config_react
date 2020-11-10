@@ -1,9 +1,10 @@
 .hello {
-  background: url('./icon.png');
-  height: 400px;
   width: 400px;
+  height: 400px;
+  background: url('./icon.png');
 }
 
 body {
+  height: 400px;
   color: red;
 }

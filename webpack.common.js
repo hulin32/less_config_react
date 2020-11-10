@@ -56,7 +56,7 @@ module.exports = {
     }),
     new ESLintPlugin(),
     new StylelintPlugin({
-      configFile: './.stylelintrc.json'
+      configFile: './stylelint.config.js'
     })
   ],
 };
